@@ -102,6 +102,24 @@ void display_image(const struct de265_image* img)
   win.Display(visu);
   //win.WaitForKeypress();
 }
+#else
+void write_picture_exc(const de265_image* img)
+{
+	static FILE* fh = NULL;
+	if (fh == NULL) { fh = fopen("out.yuv", "wb"); }
+
+	for (int y = 0; y < img->height; y++)
+		fwrite(img->y + y*img->stride, img->width, 1, fh);
+
+	for (int y = 0; y < img->chroma_height; y++)
+		fwrite(img->cb + y*img->chroma_stride, img->chroma_width, 1, fh);
+
+	for (int y = 0; y < img->chroma_height; y++)
+		fwrite(img->cr + y*img->chroma_stride, img->chroma_width, 1, fh);
+
+	fflush(fh);
+	//fclose(fh);
+}
 #endif
 
 #ifdef WIN32
@@ -254,7 +272,7 @@ int main(int argc, char** argv)
 #if HAVE_VIDEOGFX
           display_image(img);
 #else
-          //write_picture(img);
+		  write_picture_exc(img);
 #endif
         }
 

@@ -17,8 +17,11 @@
 #include <tmmintrin.h>
 #include <smmintrin.h>
 
+#ifdef _MSC_VER
+#define DECLARE_ALIGNED(a,t,name) __declspec(align(a)) t name
+#else
 #define DECLARE_ALIGNED(a,t,name) t __attribute__ ((aligned (a))) name
-
+#endif
 
 DECLARE_ALIGNED(16, static const int16_t, transform4x4_luma[8][8] )=
 {

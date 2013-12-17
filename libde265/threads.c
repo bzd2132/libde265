@@ -195,7 +195,8 @@ static THREAD_RESULT worker_thread(THREAD_PARAM pool_ptr)
 #ifndef WIN32
     int pending = __sync_sub_and_fetch(&pool->tasks_pending, 1);
 #else
-    int pending = InterlockedDecrement(reinterpret_cast<volatile long*>(&pool->tasks_pending));
+    //int pending = InterlockedDecrement(reinterpret_cast<volatile long*>(&pool->tasks_pending));
+	int pending = InterlockedDecrement(&pool->tasks_pending);
 #endif
 
 
@@ -320,7 +321,8 @@ void   decrement_tasks_pending(thread_pool* pool)
 #ifndef WIN32
     __sync_sub_and_fetch(&pool->tasks_pending, 1);
 #else
-    InterlockedDecrement(reinterpret_cast<volatile long*>(&pool->tasks_pending));
+    //InterlockedDecrement(reinterpret_cast<volatile long*>(&pool->tasks_pending));
+	InterlockedDecrement(&pool->tasks_pending);
 #endif
 }
 

@@ -147,8 +147,11 @@ typedef struct thread_context
   // residual data
 
   //#define DECLARE_ALIGNED(a,t,name) t __attribute__ ((aligned (a))) name
+#ifdef _MSC_VER
+  int16_t __declspec(align(16))  coeffBuf[32 * 32]; // alignment required for SSE code !
+#else
   int16_t __attribute__ ((aligned (16))) coeffBuf[32*32]; // alignment required for SSE code !
-
+#endif
   int16_t coeffList[3][32*32];
   int16_t coeffPos[3][32*32];
   int16_t nCoeff[3];

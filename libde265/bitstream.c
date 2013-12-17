@@ -116,7 +116,11 @@ static bool input_context_FILE_read(input_context* ctx)
 
 int  init_file_context(input_context_FILE* ctx, const char* filename)
 {
+#ifdef _MSC_VER
+  fopen_s(&ctx->input_file,filename, "rb");
+#else
   ctx->input_file = fopen(filename,"rb");
+#endif
   if (ctx->input_file==0) {
     return DE265_ERROR_NO_SUCH_FILE;
   }
@@ -275,7 +279,7 @@ int  get_bits(bitreader* br, int n)
   br->nextbits <<= n;
   br->nextbits_cnt -= n;
 
-  return val;
+  return (int)val;
 }
 
 int  get_bits_fast(bitreader* br, int n)
@@ -288,7 +292,7 @@ int  get_bits_fast(bitreader* br, int n)
   br->nextbits <<= n;
   br->nextbits_cnt -= n;
 
-  return val;
+  return (int)val;
 }
 
 int  peek_bits(bitreader* br, int n)
@@ -300,7 +304,7 @@ int  peek_bits(bitreader* br, int n)
   uint64_t val = br->nextbits;
   val >>= 64-n;
 
-  return val;
+  return (int)val;
 }
 
 void skip_bits(bitreader* br, int n)
@@ -357,7 +361,7 @@ int  get_svlc(bitreader* br)
 {
   int v = get_uvlc(br);
   if (v==0) return v;
-  bool negative = ((v&1)==0);
+  int negative = ((v&1)==0);
   return negative ? -v/2 : (v+1)/2;
 }
 

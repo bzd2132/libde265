@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5A5560C6-81C2-408C-9E4C-6FC887E89C19}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libde265</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;HAVE_CONFIG_H;HAVE_STDBOOL_H;LIBDE265_EXPORTS;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\libde265\;$(ProjectDir)..\..\;$(ProjectDir)..\..\extra;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;HAVE_CONFIG_H;HAVE_STDBOOL_H;LIBDE265_EXPORTS;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\libde265\;$(ProjectDir)\..\..\;$(ProjectDir)\..\..\extra;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;HAVE_CONFIG_H;HAVE_STDBOOL_H;LIBDE265_EXPORTS;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\libde265\;$(ProjectDir)\..\..\;$(ProjectDir)\..\..\extra;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;HAVE_CONFIG_H;HAVE_STDBOOL_H;LIBDE265_EXPORTS;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\libde265\;$(ProjectDir)\..\..\;$(ProjectDir)\..\..\extra;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\extra\getopt.c" />
+    <ClCompile Include="..\..\extra\getopt_long.c" />
+    <ClCompile Include="..\..\extra\win32cond.c" />
+    <ClCompile Include="..\..\libde265\bitstream.c" />
+    <ClCompile Include="..\..\libde265\cabac.c" />
+    <ClCompile Include="..\..\libde265\de265.c" />
+    <ClCompile Include="..\..\libde265\deblock.c" />
+    <ClCompile Include="..\..\libde265\decctx.c" />
+    <ClCompile Include="..\..\libde265\fallback-dct.c" />
+    <ClCompile Include="..\..\libde265\fallback-motion.c" />
+    <ClCompile Include="..\..\libde265\fallback.c" />
+    <ClCompile Include="..\..\libde265\image.c" />
+    <ClCompile Include="..\..\libde265\intrapred.c" />
+    <ClCompile Include="..\..\libde265\md5.c" />
+    <ClCompile Include="..\..\libde265\motion.c" />
+    <ClCompile Include="..\..\libde265\nal.c" />
+    <ClCompile Include="..\..\libde265\pps.c" />
+    <ClCompile Include="..\..\libde265\refpic.c" />
+    <ClCompile Include="..\..\libde265\sao.c" />
+    <ClCompile Include="..\..\libde265\scan.c" />
+    <ClCompile Include="..\..\libde265\sei.c" />
+    <ClCompile Include="..\..\libde265\slice.c" />
+    <ClCompile Include="..\..\libde265\sps.c" />
+    <ClCompile Include="..\..\libde265\threads.c" />
+    <ClCompile Include="..\..\libde265\transform.c" />
+    <ClCompile Include="..\..\libde265\util.c" />
+    <ClCompile Include="..\..\libde265\vps.c" />
+    <ClCompile Include="..\..\libde265\x86\sse-dct.c" />
+    <ClCompile Include="..\..\libde265\x86\sse-motion.c" />
+    <ClCompile Include="..\..\libde265\x86\sse.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\config.h" />
+    <ClInclude Include="..\..\extra\getopt.h" />
+    <ClInclude Include="..\..\extra\stdbool.h" />
+    <ClInclude Include="..\..\extra\stdint.h" />
+    <ClInclude Include="..\..\extra\win32cond.h" />
+    <ClInclude Include="..\..\libde265\bitstream.h" />
+    <ClInclude Include="..\..\libde265\cabac.h" />
+    <ClInclude Include="..\..\libde265\de265.h" />
+    <ClInclude Include="..\..\libde265\deblock.h" />
+    <ClInclude Include="..\..\libde265\decctx.h" />
+    <ClInclude Include="..\..\libde265\fallback-dct.h" />
+    <ClInclude Include="..\..\libde265\fallback-motion.h" />
+    <ClInclude Include="..\..\libde265\fallback.h" />
+    <ClInclude Include="..\..\libde265\image.h" />
+    <ClInclude Include="..\..\libde265\intrapred.h" />
+    <ClInclude Include="..\..\libde265\lowlevel.h" />
+    <ClInclude Include="..\..\libde265\md5.h" />
+    <ClInclude Include="..\..\libde265\motion.h" />
+    <ClInclude Include="..\..\libde265\motion_func.h" />
+    <ClInclude Include="..\..\libde265\nal.h" />
+    <ClInclude Include="..\..\libde265\pps.h" />
+    <ClInclude Include="..\..\libde265\pps_func.h" />
+    <ClInclude Include="..\..\libde265\refpic.h" />
+    <ClInclude Include="..\..\libde265\sao.h" />
+    <ClInclude Include="..\..\libde265\scan.h" />
+    <ClInclude Include="..\..\libde265\sei.h" />
+    <ClInclude Include="..\..\libde265\slice.h" />
+    <ClInclude Include="..\..\libde265\slice_func.h" />
+    <ClInclude Include="..\..\libde265\sps.h" />
+    <ClInclude Include="..\..\libde265\threads.h" />
+    <ClInclude Include="..\..\libde265\transform.h" />
+    <ClInclude Include="..\..\libde265\util.h" />
+    <ClInclude Include="..\..\libde265\vps.h" />
+    <ClInclude Include="..\..\libde265\x86\sse-dct.h" />
+    <ClInclude Include="..\..\libde265\x86\sse-motion.h" />
+    <ClInclude Include="..\..\libde265\x86\sse.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

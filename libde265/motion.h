@@ -44,5 +44,4 @@ typedef struct
   MotionVector mvC[2];
 } VectorInfo;
 
-
 #endif

@@ -199,8 +199,12 @@ int main(int argc, char** argv)
   }
 
   de265_set_parameter_bool(ctx, DE265_DECODER_PARAM_BOOL_SEI_CHECK_HASH, check_hash);
-
+#ifdef _MSC_VER
+  FILE* fh = NULL;
+  fopen_s(&fh,argv[optind], "rb");
+#else
   FILE* fh = fopen(argv[optind], "rb");
+#endif
   if (fh==NULL) {
     fprintf(stderr,"cannot open file %s!\n", argv[1]);
     exit(10);
@@ -292,9 +296,9 @@ int main(int argc, char** argv)
 
 
   if (show_profile) {
-    showMotionProfile();
-    showIntraPredictionProfile();
-    showTransformProfile();
+    //showMotionProfile();
+    //showIntraPredictionProfile();
+    //showTransformProfile();
   }
 
   return err==DE265_OK ? 0 : 10;

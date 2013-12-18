@@ -84,15 +84,30 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;HAVE_CONFIG_H;HAVE_STDBOOL_H;LIBDE265_EXPORTS;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\libde265\;$(ProjectDir)..\..\;$(ProjectDir)..\..\extra;</AdditionalIncludeDirectories>
+      <CallingConvention>FastCall</CallingConvention>
+      <CompileAs>Default</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName) $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetName).lib $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName).pdb $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName).map $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+
+mkdir $(ProjectDir)..\..\Exports\include
+mkdir $(ProjectDir)..\..\Exports\include\libde265
+copy $(ProjectDir)..\..\libde265\de265.h $(ProjectDir)..\..\Exports\include
+copy $(ProjectDir)..\..\libde265\*.h $(ProjectDir)..\..\Exports\include\\libde265
+copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -107,6 +122,18 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName) $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName).pdb $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName).map $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+
+mkdir $(ProjectDir)..\..\Exports\include
+mkdir $(ProjectDir)..\..\Exports\include\libde265
+copy $(ProjectDir)..\..\libde265\de265.h $(ProjectDir)..\..\Exports\include
+copy $(ProjectDir)..\..\libde265\*.h $(ProjectDir)..\..\Exports\include\\libde265
+copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -125,6 +152,18 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName) $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName).pdb $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName).map $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+
+mkdir $(ProjectDir)..\..\Exports\include
+mkdir $(ProjectDir)..\..\Exports\include\libde265
+copy $(ProjectDir)..\..\libde265\de265.h $(ProjectDir)..\..\Exports\include
+copy $(ProjectDir)..\..\libde265\*.h $(ProjectDir)..\..\Exports\include\\libde265
+copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -143,6 +182,18 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>mkdir $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName) $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName).pdb $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetFileName).map $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+
+mkdir $(ProjectDir)..\..\Exports\include
+mkdir $(ProjectDir)..\..\Exports\include\libde265
+copy $(ProjectDir)..\..\libde265\de265.h $(ProjectDir)..\..\Exports\include
+copy $(ProjectDir)..\..\libde265\*.h $(ProjectDir)..\..\Exports\include\\libde265
+copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\extra\getopt.c" />

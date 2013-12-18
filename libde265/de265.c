@@ -79,6 +79,19 @@ LIBDE265_API de265_decoder_context* de265_new_decoder()
   return (de265_decoder_context*)ctx;
 }
 
+LIBDE265_API de265_error de265_set_sse(de265_decoder_context* de265ctx, int value)
+{
+	if (!de265ctx) return DE265_ERROR_POINTER;
+	if (value)
+	{
+		set_lowlevel_functions(de265ctx, LOWLEVEL_SSE);
+	}
+	else
+	{
+		set_lowlevel_functions(de265ctx, LOWLEVEL_AVX);
+	}
+	return DE265_OK;
+}
 
 LIBDE265_API de265_error de265_start_worker_threads(de265_decoder_context* de265ctx, int number_of_threads)
 {

@@ -13,17 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Platfrom">
-      <UniqueIdentifier>{4dfe2bd4-e6d4-4ad5-86b7-9b829ab850fd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Platfrom\x86">
-      <UniqueIdentifier>{dd49a04b-7839-4d5c-a08b-331e22ba82b5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Platfrom\x64">
-      <UniqueIdentifier>{e466e34d-df87-44e8-a61c-d5a58d6688a2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Common">
       <UniqueIdentifier>{fb5e7f13-1849-4f01-8a47-a79912928758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{4dfe2bd4-e6d4-4ad5-86b7-9b829ab850fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\x86">
+      <UniqueIdentifier>{dd49a04b-7839-4d5c-a08b-331e22ba82b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\x64">
+      <UniqueIdentifier>{e466e34d-df87-44e8-a61c-d5a58d6688a2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -100,13 +100,13 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\libde265\x86\sse.c">
-      <Filter>Platfrom\x86</Filter>
+      <Filter>Platform\x86</Filter>
     </ClCompile>
     <ClCompile Include="..\..\libde265\x86\sse-dct.c">
-      <Filter>Platfrom\x86</Filter>
+      <Filter>Platform\x86</Filter>
     </ClCompile>
     <ClCompile Include="..\..\libde265\x86\sse-motion.c">
-      <Filter>Platfrom\x86</Filter>
+      <Filter>Platform\x86</Filter>
     </ClCompile>
     <ClCompile Include="..\..\extra\getopt.c">
       <Filter>Common</Filter>
@@ -204,13 +204,13 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\libde265\x86\sse.h">
-      <Filter>Platfrom\x86</Filter>
+      <Filter>Platform\x86</Filter>
     </ClInclude>
     <ClInclude Include="..\..\libde265\x86\sse-dct.h">
-      <Filter>Platfrom\x86</Filter>
+      <Filter>Platform\x86</Filter>
     </ClInclude>
     <ClInclude Include="..\..\libde265\x86\sse-motion.h">
-      <Filter>Platfrom\x86</Filter>
+      <Filter>Platform\x86</Filter>
     </ClInclude>
     <ClInclude Include="..\..\extra\getopt.h">
       <Filter>Common</Filter>

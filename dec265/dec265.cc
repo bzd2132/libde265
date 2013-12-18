@@ -36,6 +36,7 @@ extern "C" {
 #else
 // VS2008 didn't support C99, compile all everything as C++
 #include "libde265/decctx.h"
+#include "cpuinfo.h"
 #endif
 
 #if HAVE_VIDEOGFX
@@ -204,18 +205,20 @@ int main(int argc, char** argv)
     exit(show_help ? 0 : 5);
   }
 
-
   de265_error err =DE265_OK;
 
   de265_init();
   de265_decoder_context* ctx = de265_new_decoder();
-
   if (argc>=3) {
     if (nThreads>0) {
       err = de265_start_worker_threads(ctx, nThreads);
     }
   }
-
+#ifdef _MSC_VER
+  cpuinfo info = { 0 };
+  get_cpuinfo(&info);
+  de265_set_sse(ctx, (info.support_sse4_1 || info.support_sse4_2));
+#endif
   de265_set_parameter_bool(ctx, DE265_DECODER_PARAM_BOOL_SEI_CHECK_HASH, check_hash);
 #ifdef _MSC_VER
   FILE* fh = NULL;

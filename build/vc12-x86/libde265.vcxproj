@@ -125,6 +125,7 @@ copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
     <PostBuildEvent>
       <Command>mkdir $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 copy $(OutDir)\$(TargetFileName) $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetName).lib $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 copy $(OutDir)\$(TargetFileName).pdb $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 copy $(OutDir)\$(TargetFileName).map $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 
@@ -155,6 +156,7 @@ copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
     <PostBuildEvent>
       <Command>mkdir $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 copy $(OutDir)\$(TargetFileName) $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetName).lib $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 copy $(OutDir)\$(TargetFileName).pdb $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 copy $(OutDir)\$(TargetFileName).map $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 
@@ -185,6 +187,7 @@ copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
     <PostBuildEvent>
       <Command>mkdir $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 copy $(OutDir)\$(TargetFileName) $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
+copy $(OutDir)\$(TargetName).lib $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 copy $(OutDir)\$(TargetFileName).pdb $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 copy $(OutDir)\$(TargetFileName).map $(ProjectDir)..\..\Exports\bin\$(ConfigurationName)\
 

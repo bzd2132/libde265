@@ -157,6 +157,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\dec265\cpuinfo.cpp" />
     <ClCompile Include="..\..\..\dec265\dec265.cc">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Default</CompileAs>
     </ClCompile>
@@ -165,6 +166,7 @@
     <ClCompile Include="..\..\..\extra\win32cond.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\dec265\cpuinfo.h" />
     <ClInclude Include="..\..\..\extra\getopt.h" />
     <ClInclude Include="..\..\..\extra\stdbool.h" />
     <ClInclude Include="..\..\..\extra\stdint.h" />

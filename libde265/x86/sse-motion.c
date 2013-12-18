@@ -3178,7 +3178,7 @@ void ff_hevc_put_hevc_qpel_v_3_8_sse(int16_t *dst, ptrdiff_t dststride,
             for(x=0;x<width;x+=4){
                 r0 = _mm_set1_epi16(0);
                 /* load data in register  */
-                //x1 = _mm_setzero_si128();
+                x1 = _mm_setzero_si128();
                 x2 = _mm_loadl_epi64((__m128i *) &src[x-2 * srcstride]);
                 x3 = _mm_loadl_epi64((__m128i *) &src[x-srcstride]);
                 x4 = _mm_loadl_epi64((__m128i *) &src[x]);

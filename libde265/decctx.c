@@ -30,12 +30,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-
 #include "fallback.h"
-#ifdef HAVE_SSE4_1
+#if defined(_MSC_VER) || defined(HAVE_SSE4_1)
 #include "x86/sse.h"
 #endif
-
 
 void init_decoder_context(decoder_context* ctx)
 {
@@ -92,24 +90,19 @@ void init_decoder_context(decoder_context* ctx)
 void set_lowlevel_functions(decoder_context* ctx, enum LowLevelImplementation l)
 {
   // fill lowlevel functions first (so that function table is completely filled)
+	init_lowlevel_functions_fallback(&ctx->lowlevel);
 
-  init_lowlevel_functions_fallback(&ctx->lowlevel);
 
-
-  if (l==LOWLEVEL_AUTO) {
-#ifdef HAVE_SSE4_1
-    l = LOWLEVEL_SSE;
-#endif
-  }
+	if (l==LOWLEVEL_AUTO) {
+		l = LOWLEVEL_SSE;
+	}
 
 
   // override functions with optimized variants
 
-#ifdef HAVE_SSE4_1
-  if (l==LOWLEVEL_SSE) {
-    init_lowlevel_functions_sse(&ctx->lowlevel);
-  }
-#endif
+	if (l==LOWLEVEL_SSE) {
+		init_lowlevel_functions_sse(&ctx->lowlevel);
+	}
 }
 
 void reset_decoder_context_for_new_picture(decoder_context* ctx)

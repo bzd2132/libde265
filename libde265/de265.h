@@ -65,9 +65,11 @@ typedef enum {
   DE265_ERROR_CODED_PARAMETER_OUT_OF_RANGE,
   DE265_ERROR_IMAGE_BUFFER_FULL,
   DE265_ERROR_CANNOT_START_THREADPOOL,
+  DE265_ERROR_POINTER,
 
   DE265_WARNING_NO_WPP_CANNOT_USE_MULTITHREADING = 1000,
-  DE265_WARNING_WARNING_BUFFER_FULL
+  DE265_WARNING_WARNING_BUFFER_FULL,
+  
 } de265_error;
 
 LIBDE265_API const char* de265_get_error_text(de265_error err);
@@ -115,6 +117,9 @@ LIBDE265_API de265_decoder_context* de265_new_decoder(void);
 /* Initialize background decoding threads. If this function is not called,
    all decoding is done in the main thread (no multi-threading). */
 LIBDE265_API de265_error de265_start_worker_threads(de265_decoder_context*, int number_of_threads);
+
+/*Enable sse idct*/
+LIBDE265_API de265_error de265_set_sse(de265_decoder_context* de265ctx, int value);
 
 /* Free decoder context. May only be called once on a context. */
 LIBDE265_API void de265_free_decoder(de265_decoder_context*);

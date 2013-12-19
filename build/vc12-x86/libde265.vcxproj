@@ -229,6 +229,7 @@ copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
     <ClCompile Include="..\..\libde265\x86\sse-dct.c" />
     <ClCompile Include="..\..\libde265\x86\sse-motion.c" />
     <ClCompile Include="..\..\libde265\x86\sse.c" />
+    <ClCompile Include="hevc_memory.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\config.h" />
@@ -267,6 +268,7 @@ copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
     <ClInclude Include="..\..\libde265\x86\sse-dct.h" />
     <ClInclude Include="..\..\libde265\x86\sse-motion.h" />
     <ClInclude Include="..\..\libde265\x86\sse.h" />
+    <ClInclude Include="hevc_memory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -108,6 +108,7 @@ void read_vps(bitreader* reader, video_parameter_set* vps)
     rbsp_trailing_bits()
     */
   }
+  check_rbsp_trailing_bits(reader);
 }
 
 

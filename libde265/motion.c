@@ -137,8 +137,11 @@ void mc_luma(const decoder_context* ctx, int mv_x, int mv_y,
   int w = sps->pic_width_in_luma_samples;
   int h = sps->pic_height_in_luma_samples;
 
-  int16_t mcbuffer[MAX_CU_SIZE * (MAX_CU_SIZE+7)];
-
+#ifdef _MSC_VER
+  int16_t __declspec(align(16)) mcbuffer[MAX_CU_SIZE * (MAX_CU_SIZE + 7)];
+#else
+  int16_t mcbuffer[MAX_CU_SIZE * (MAX_CU_SIZE + 7)] __attribute__ ((aligned (16))) ;
+#endif
   if (xFracL==0 && yFracL==0) {
     if (xIntOffsL >= 0 && yIntOffsL >= 0 &&
         nPbW+xIntOffsL <= w && nPbH+yIntOffsL <= h) {
@@ -359,10 +362,13 @@ void generate_inter_prediction_samples(decoder_context* ctx,
   const seq_parameter_set* sps = ctx->current_sps;
 
   TotalPredCnt++;
-
+#ifdef _MSC_VER
+  int16_t __declspec(align(16)) predSamplesL[2 /* LX */][MAX_CU_SIZE* MAX_CU_SIZE];
+  int16_t __declspec(align(16)) predSamplesC[2 /* chroma */][2 /* LX */][MAX_CU_SIZE* MAX_CU_SIZE];
+#else
   int16_t predSamplesL                 [2 /* LX */][MAX_CU_SIZE* MAX_CU_SIZE];
   int16_t predSamplesC[2 /* chroma */ ][2 /* LX */][MAX_CU_SIZE* MAX_CU_SIZE];
-
+#endif
   int xP = xC+xB;
   int yP = yC+yB;
 

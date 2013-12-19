@@ -56,15 +56,19 @@ void de265_alloc_image(de265_image* img, int w,int h, enum de265_chroma c, int b
 
   img->chroma_format= c;
 
-  img->y_mem = (uint8_t *)malloc(img->stride * (h+2*border));
+  img->y_mem = (uint8_t *)malloc(img->stride * (h + 2 * border) + alignment);
   img->y     = img->y_mem + border + 2*border*img->stride;
+  img->y = (uint8_t*)(((uint64_t)img->y + alignment - 1) / alignment * alignment);
 
   if (c != de265_chroma_mono) {
-    img->cb_mem = (uint8_t *)malloc(img->chroma_stride * (chroma_height+2*border));
-    img->cr_mem = (uint8_t *)malloc(img->chroma_stride * (chroma_height+2*border));
+	  img->cb_mem = (uint8_t *)malloc(img->chroma_stride * (chroma_height + 2 * border) + alignment);
+	  img->cr_mem = (uint8_t *)malloc(img->chroma_stride * (chroma_height + 2 * border) + alignment);
 
     img->cb     = img->cb_mem + border + 2*border*img->chroma_stride;
+	img->cb = (uint8_t*)(((uint64_t)img->cb + alignment - 1) / alignment * alignment);
+
     img->cr     = img->cr_mem + border + 2*border*img->chroma_stride;
+	img->cr = (uint8_t*)(((uint64_t)img->cr + alignment - 1) / alignment * alignment);
   } else {
     img->cb_mem = NULL;
     img->cr_mem = NULL;

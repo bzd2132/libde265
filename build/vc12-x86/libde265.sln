@@ -4,11 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libde265", "libde265.vcxproj", "{5A5560C6-81C2-408C-9E4C-6FC887E89C19}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3A281E82-5BBC-4793-B022-495D0EF2AC18} = {3A281E82-5BBC-4793-B022-495D0EF2AC18}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "decoder", "decoder\decoder.vcxproj", "{3A281E82-5BBC-4793-B022-495D0EF2AC18}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A5560C6-81C2-408C-9E4C-6FC887E89C19} = {5A5560C6-81C2-408C-9E4C-6FC887E89C19}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,8 +37,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

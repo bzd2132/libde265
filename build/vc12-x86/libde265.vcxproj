@@ -210,6 +210,7 @@ copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
     <ClCompile Include="..\..\libde265\fallback-dct.c" />
     <ClCompile Include="..\..\libde265\fallback-motion.c" />
     <ClCompile Include="..\..\libde265\fallback.c" />
+    <ClCompile Include="..\..\libde265\hevc_memory.c" />
     <ClCompile Include="..\..\libde265\image.c" />
     <ClCompile Include="..\..\libde265\intrapred.c" />
     <ClCompile Include="..\..\libde265\md5.c" />
@@ -229,7 +230,6 @@ copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
     <ClCompile Include="..\..\libde265\x86\sse-dct.c" />
     <ClCompile Include="..\..\libde265\x86\sse-motion.c" />
     <ClCompile Include="..\..\libde265\x86\sse.c" />
-    <ClCompile Include="hevc_memory.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\config.h" />
@@ -245,6 +245,7 @@ copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
     <ClInclude Include="..\..\libde265\fallback-dct.h" />
     <ClInclude Include="..\..\libde265\fallback-motion.h" />
     <ClInclude Include="..\..\libde265\fallback.h" />
+    <ClInclude Include="..\..\libde265\hevc_memory.h" />
     <ClInclude Include="..\..\libde265\image.h" />
     <ClInclude Include="..\..\libde265\intrapred.h" />
     <ClInclude Include="..\..\libde265\lowlevel.h" />
@@ -268,7 +269,6 @@ copy $(ProjectDir)..\..\config.h $(ProjectDir)..\..\Exports\include</Command>
     <ClInclude Include="..\..\libde265\x86\sse-dct.h" />
     <ClInclude Include="..\..\libde265\x86\sse-motion.h" />
     <ClInclude Include="..\..\libde265\x86\sse.h" />
-    <ClInclude Include="hevc_memory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -117,7 +117,7 @@
     <ClCompile Include="..\..\extra\win32cond.c">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="hevc_memory.c">
+    <ClCompile Include="..\..\libde265\hevc_memory.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -230,8 +230,8 @@
     <ClInclude Include="..\..\config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="hevc_memory.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\..\libde265\hevc_memory.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
